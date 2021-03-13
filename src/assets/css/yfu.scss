@@ -1,0 +1,79 @@
+.leftNav {
+  background-color: #e95b30;
+  color: white;
+}
+
+#wrapper {
+  overflow-x: hidden;
+}
+
+#sidebar-wrapper {
+  min-height: 100vh;
+  margin-left: -15rem;
+  -webkit-transition: margin 0.25s ease-out;
+  -moz-transition: margin 0.25s ease-out;
+  -o-transition: margin 0.25s ease-out;
+  transition: margin 0.25s ease-out;
+}
+
+#sidebar-wrapper .sidebar-heading {
+  padding: 0.875rem 1.25rem;
+  font-size: 1.2rem;
+}
+
+#sidebar-wrapper .list-group {
+  width: 15rem;
+}
+
+.main-content {
+  min-width: 100vw;
+  padding-left: 100px;
+}
+
+@media (min-width: 768px) {
+  #sidebar-wrapper {
+    margin-left: 0;
+  }
+
+  .main-content {
+    min-width: 0;
+    width: 100%;
+  }
+
+  #wrapper.toggled #sidebar-wrapper {
+    margin-left: -15rem;
+  }
+}
+
+.btn-outline-orange {
+  color: #e95b30;
+  border-color: #e95b30;
+}
+
+.btn-outline-primary:hover {
+  color: #fff;
+  background-color: #e95b30;
+  border-color: #e95b30;
+}
+
+.home-first-section-bg {
+  // display: block;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background: url('../yfu/home-bg.png') no-repeat;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  // height: 30px; /* Height of new image */
+}
+
+.home-first-section {
+  color: white;
+  background-color: black;
+}
+
+.fs-3 {
+  font-size: 1.3em;
+}

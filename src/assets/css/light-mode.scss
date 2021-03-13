@@ -1,0 +1,146 @@
+$primary-color: #7f63f4;
+
+.hidden {
+  display: none;
+}
+
+.main-blue {
+  color: $primary-color;
+}
+
+.bg-main-blue {
+  background-color: $primary-color;
+  border: none;
+}
+
+.bg-main-white {
+  background-color: white;
+  color: grey;
+  border-color: lightgray;
+  font-size: 0.8rem;
+}
+
+.light-mode .leftNav li:hover {
+  background: #f1eeff;
+}
+
+.light-mode .leftNav:hover {
+  width: 170px;
+}
+
+.light-mode .leftNav .item-menu {
+  height: 50px;
+  overflow: hidden;
+  color: #7c6ebb;
+}
+
+.light-mode .active > li {
+  background-color: #f1eeff;
+  border-left: 2px solid #7d64fb;
+  padding-left: 13px;
+}
+
+.light-mode .leftNav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+span.menu {
+  padding-left: 17px;
+}
+
+/**
+--------------
+Light Mode
+--------------
+**/
+.MuiDialogContent-root,
+.MuiButton-root {
+  background: #192039;
+  color: #c2c2c2;
+  position: relative;
+}
+
+.light-mode .navbar-brand {
+  // display: block;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background: url('../logo.png') no-repeat;
+  background-size: contain;
+  -webkit-background-size: contain;
+  -moz-background-size: contain;
+  -o-background-size: contain;
+  background-size: contain;
+  height: 30px; /* Height of new image */
+}
+
+.light-mode,
+.light-mode .leftNav,
+.light-mode .navbar {
+  background-color: #fff;
+  color: #c2c2c2;
+}
+
+.light-mode .navbar a {
+  color: #ffffff;
+}
+
+.light-mode.main-content {
+  background: #f3f6f9;
+  color: #c2c2c2;
+  min-height: 100vh;
+  // padding-top: 10vh;
+}
+
+.light-mode .pageHeader {
+  height: 40px;
+  padding-left: 80px;
+  padding-top: 6px;
+  background: #e7e6f8;
+  vertical-align: middle;
+  color: #7f63f4;
+  font-weight: bold;
+}
+
+.light-mode .box-farm {
+  min-height: 250px;
+  background: #fff;
+}
+
+.light-mode .section-title {
+  color: #7f63f4;
+  font-weight: bold;
+}
+
+.light-mode .info-header {
+  background-color: #cccccc;
+}
+
+.lightmod .info-header-down {
+  background-color: #fafafa;
+}
+
+.text-gray:hover {
+  color: #abafb3;
+}
+
+.light-mode .pool-titles {
+  color: #808389;
+  font-weight: 600;
+}
+
+.light-mode .pool-info {
+  color: #808389;
+  font-weight: 300;
+}
+
+/* hives */
+.light-mode .hive-details {
+  font-size: 1m;
+  line-height: 2.3em;
+}
+
+/* exchange */
+.light-mode .unit-price {
+  color: #424242;
+}

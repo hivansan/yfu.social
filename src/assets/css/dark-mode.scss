@@ -1,0 +1,188 @@
+$card-bg-color: #262c47;
+
+.dark-mode.main-content {
+  background: #192039 !important;
+  color: #c2c2c2 !important;
+  min-height: 100vh !important;
+  padding-top: 10vh;
+}
+
+/**
+--------------
+Top Menu Navigation
+--------------
+**/
+
+.dark-mode .navbar-brand {
+  // display: block;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background: url('../logo-dark.png') no-repeat;
+  background-size: contain;
+  -webkit-background-size: contain;
+  -moz-background-size: contain;
+  -o-background-size: contain;
+  background-size: contain;
+  height: 30px; /* Height of new image */
+}
+
+.dark-mode .navbar {
+  background: #2f2f2f;
+}
+
+.dark-mode .leftNav .item-menu {
+  height: 50px;
+  overflow: hidden;
+  color: #7c6ebb;
+}
+
+.dark-mode .active > li {
+  background-color: #2e3359;
+  border-left: 2px solid #7d64fb;
+  padding-left: 13px;
+}
+
+span.menu {
+  padding-left: 17px;
+}
+
+.dark-mode .leftNav {
+  background-color: #262c47;
+  box-shadow: none;
+}
+
+.dark-mode .leftNav li:hover {
+  background: #192039;
+}
+
+.dark-mode .leftNav:hover {
+  width: 170px;
+}
+
+.dark-mode .navbar {
+  background-color: #262c47 !important;
+}
+
+/**
+--------------
+Dark Mode
+--------------
+**/
+.MuiDialogContent-root,
+.MuiButton-root {
+  background: #192039 !important;
+  color: #c2c2c2 !important;
+  position: relative;
+}
+
+.dark-mode,
+.dark-mode .navbar {
+  background-color: #19203a;
+  color: #c2c2c2 !important;
+}
+
+.dark-mode .navbar a {
+  color: #ffffff !important;
+}
+
+.dark-mode .pageHeader {
+  height: 40px;
+  padding-left: 80px;
+  padding-top: 6px;
+  background: #23274c;
+  vertical-align: middle;
+  color: #7f63f4;
+  font-weight: bold;
+}
+
+.dark-mode .box-farm {
+  min-height: 250px;
+  background: #252d47;
+}
+
+.dark-mode .section-title {
+  color: #7f63f4;
+  font-weight: bold;
+}
+
+.dark-mode .base-card {
+  background-color: $card-bg-color;
+  box-shadow: none;
+}
+
+.dark-mode .base-card > .card-body {
+  color: white;
+}
+/* hives */
+
+.dark-mode .hive-wrapper {
+  background-color: $card-bg-color;
+}
+
+.dark-mode .hive-details {
+  color: white;
+  font-size: 1em;
+  line-height: 2.3em;
+}
+
+.dark-mode hr {
+  border-top: 2px solid #545c73;
+}
+
+/* exchange */
+.dark-mode .exchange-wrapper {
+  background-color: $card-bg-color;
+}
+
+.dark-mode .dropdown-menu {
+  background-color: $card-bg-color;
+}
+
+.dark-mode .dropdown-item {
+  color: white !important;
+  font-size: 0.9em;
+}
+
+.dark-mode .form-control {
+  border-color: #656565;
+  color: white;
+  background-color: $card-bg-color;
+}
+
+.dark-mode .form-control:disabled {
+  border-color: #656565;
+  color: white;
+  background-color: #848484;
+}
+
+// general button
+.main-btn {
+  background-color: #7f63f4;
+  padding: 0.2em 1.4em !important;
+  color: white;
+  border: none;
+}
+
+/* exchange */
+.dark-mode .unit-price {
+  color: #c2c2c2;
+}
+
+/* stake */
+.dark-mode .pool-card,
+.dark-mode .info-header-down {
+  background-color: $card-bg-color;
+}
+
+.dark-mode .pool-info {
+  color: white;
+}
+
+.dark-mode .info-header {
+  background-color: #7c6ebb;
+}
+
+.dark-mode .MuiTypography-root.MuiTypography-h6,
+.dark-mode .MuiInputBase-input {
+  color: white;
+}
