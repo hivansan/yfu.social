@@ -118,7 +118,7 @@ class Header extends React.Component {
             )}
             {!address && (
               <button
-                className='btn btn-outline-primary btn-outline-orange btn-round'
+                className='btn btn-outline-primary btn-outline-orange round-17'
                 onClick={this.unlockClicked}
               >
                 Connect Wallet

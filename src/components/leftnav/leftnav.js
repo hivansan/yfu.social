@@ -26,7 +26,7 @@ const LeftNav = (props) => {
             </li>
           </NavLink>
 
-          <NavLink exact to='/routeX'>
+          <NavLink exact to='/nft'>
             <li className='item-menu'>
               <img
                 alt=''
@@ -37,7 +37,7 @@ const LeftNav = (props) => {
             </li>
           </NavLink>
 
-          <NavLink exact to='/routeX'>
+          <NavLink exact to='/hives'>
             <li className='item-menu'>
               <img
                 alt=''

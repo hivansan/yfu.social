@@ -15,6 +15,7 @@ import Hives from './components/hives/hives';
 import WhaleTank from './components/whalestank/whaletank';
 import Stake from './components/stake/stake';
 import Swarm from './components/swarm/swarm';
+import Nft from './components/nft/nft';
 import Pools from './components/pools/pools';
 
 import {
@@ -145,8 +146,8 @@ class App extends Component {
                     disableSwap={true}
                   />
                 </Route>
-                <Route path='/swarm'>
-                  <Swarm />
+                <Route path='/nft'>
+                  <Nft />
                 </Route>
                 <Route path='/'>
                   <Home />

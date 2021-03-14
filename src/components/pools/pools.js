@@ -337,8 +337,6 @@ const Pools = (props) => {
 
   return (
     <div>
-      <div className='pageHeader my-auto'>Buy Pool Tokens</div>
-
       <div className='p-5 ml-5'>
         {boxesLayout}
         <div className='row'>

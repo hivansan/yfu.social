@@ -1,5 +1,16 @@
+$primary-color: #e95b30;
+$gray: #808080;
+
+.orange {
+  color: $primary-color;
+}
+
+.gray {
+  color: $gray;
+}
+
 .leftNav {
-  background-color: #e95b30;
+  background-color: $primary-color;
   color: white;
 }
 
@@ -46,14 +57,14 @@
 }
 
 .btn-outline-orange {
-  color: #e95b30;
-  border-color: #e95b30;
+  color: $primary-color;
+  border-color: $primary-color;
 }
 
 .btn-outline-primary:hover {
   color: #fff;
-  background-color: #e95b30;
-  border-color: #e95b30;
+  background-color: $primary-color;
+  border-color: $primary-color;
 }
 
 .home-first-section-bg {
@@ -76,4 +87,8 @@
 
 .fs-3 {
   font-size: 1.3em;
+}
+
+h1 {
+  font-size: 3.5rem;
 }
