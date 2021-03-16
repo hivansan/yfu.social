@@ -10,11 +10,9 @@ import './i18n';
 
 import Account from './components/account/account';
 import Home from './components/home/home';
-import Farm from './components/farms/farms';
 import Hives from './components/hives/hives';
-import WhaleTank from './components/whalestank/whaletank';
+import Faq from './components/faq/faq';
 import Stake from './components/stake/stake';
-import Swarm from './components/swarm/swarm';
 import Nft from './components/nft/nft';
 import Pools from './components/pools/pools';
 
@@ -128,9 +126,8 @@ class App extends Component {
             <>
               <Switch>
                 <Route path='/stake/:address' component={Stake} />
-                <Route path='/whaletank' component={WhaleTank} />
                 <Route path='/hives' component={Hives} />
-                <Route path='/farms' component={Farm} />
+                <Route path='/faq' component={Faq} />
                 <Route path='/exchange' component={Exchange} />
                 <Route exact path='/pools/:selectedPool'>
                   <Pools

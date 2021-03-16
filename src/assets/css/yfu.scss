@@ -92,3 +92,29 @@ $gray: #808080;
 h1 {
   font-size: 3.5rem;
 }
+
+.main-btn {
+  background-color: $primary-color;
+  padding: 0.2em 1.4em !important;
+  color: white;
+  border: none;
+}
+
+.main-btn:hover {
+  background-color: #85351c !important;
+}
+
+.faq-item {
+  padding-bottom: 0.3rem;
+  border-top: 1px solid #e8e8e8;
+  border-right: 1px solid #e8e8e8;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.left-auto {
+  left: auto;
+}
+
+.max-width-40 {
+  max-width: 40%;
+}

@@ -9,11 +9,13 @@ const Hives = (props) => {
   return (
     <div>
       <div className='p-5'>
+        <h4 className='orange'>ANIME LIMITED</h4>
+        <h1>ACTIVE POOLS</h1>
         <div className='row'>
           <div className='col-md-6'>
-            <div className='alert alert-success' role='alert'>
+            {/* <div className='alert alert-success' role='alert'>
               <AiOutlineWarning /> Bonus only applies on your first stake.
-            </div>
+            </div> */}
           </div>
         </div>
 

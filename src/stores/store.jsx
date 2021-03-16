@@ -1150,7 +1150,7 @@ class Store {
       earned = parseFloat(earned) / 10 ** asset.decimals;
       callback(null, parseFloat(earned));
     } catch (ex) {
-      return callback(ex);
+      callback(ex);
     }
   };
 

@@ -48,7 +48,7 @@ const LeftNav = (props) => {
             </li>
           </NavLink>
 
-          <NavLink exact to='/routeX'>
+          <NavLink exact to='/faq'>
             <li className='item-menu'>
               <img
                 alt=''
@@ -69,19 +69,6 @@ const LeftNav = (props) => {
               <span className='menu'>RESOURCES</span>
             </li>
           </NavLink>
-
-          {/* <li
-            className='item-menu'
-            style={{ paddingLeft: '10px' }}
-            onClick={props.onSwitchTheme}
-          >
-            <IconContext.Provider value={{ size: '2em' }}>
-              <WiMoonAltThirdQuarter />
-            </IconContext.Provider>
-            <span className='menu' style={{ paddingLeft: '10px' }}>
-              {props.activeStyle == 'light-mode' ? ' dark mode' : ' light mode'}
-            </span>
-          </li> */}
         </ul>
       </div>
     </div>

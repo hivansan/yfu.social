@@ -25,7 +25,9 @@ const HivesList = (props) => {
 
   //console.log('themeType -----------', themeType); // why is this #true?
 
-  const [rewardPools, setRewardPools] = useState(store.getStore('rewardPools'));
+  const [rewardPools, setRewardPools] = useState(
+    store.getStore('rewardPools').filter(({ name }) => name === 'YFU')
+  );
   const [account, setAccount] = useState(store.getStore('account'));
   // console.log('rewardPools -----------', JSON.stringify(rewardPools)); // why is this #true?
 
@@ -50,7 +52,9 @@ const HivesList = (props) => {
   const showHash = (txHash) => {};
 
   const balancesReturned = useCallback(() => {
-    const rewardPools = store.getStore('rewardPools');
+    const rewardPools = store
+      .getStore('rewardPools')
+      .filter(({ name }) => name === 'YFU');
     setRewardPools(rewardPools);
   }, []);
 
@@ -59,7 +63,7 @@ const HivesList = (props) => {
   const hives = rewardsMapper(rewardPools).map((t) => {
     console.log(t.disableStake);
     return (
-      <div className='col-lg-3 col-md-4 col-sm-6' key={t.address}>
+      <div className='col-lg-4 col-md-4 col-sm-6' key={t.address}>
         <Hive
           acronym={t.symbol}
           name={t.name}

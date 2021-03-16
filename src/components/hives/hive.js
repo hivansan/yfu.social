@@ -101,7 +101,7 @@ const Hive = (props) => {
                   navigateStake(props.token);
                 }
               }}
-              className='btn btn-primary bg-main-blue main-btn btn-block'
+              className='btn btn-primary main-btn btn-block'
             >
               View
             </button>
