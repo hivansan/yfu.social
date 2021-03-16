@@ -128,11 +128,24 @@ class Header extends React.Component {
               </button>
             )}
             <div className='d-flex justify-content-between header-social mt-2'>
-              <img src={require('../../assets/yfu/social-twitter.png')} />
-              <img src={require('../../assets/yfu/social-telegram.png')} />
-              <img src={require('../../assets/yfu/social-medium.png')} />
-              <img src={require('../../assets/yfu/social-instagram.png')} />
-              <img src={require('../../assets/yfu/social-discord.png')} />
+              <a href='https://twitter.com/YFuFinance' target='_blank'>
+                <img src={require('../../assets/yfu/social-twitter.png')} />
+              </a>
+              <a
+                href='https://t.me/joinchat/RfldRBfhzHSSLchXsCwLhA'
+                target='_blank'
+              >
+                <img src={require('../../assets/yfu/social-telegram.png')} />
+              </a>
+              <a href='https://yfu-finance.medium.com/' target='_blank'>
+                <img src={require('../../assets/yfu/social-medium.png')} />
+              </a>
+              <a href='https://www.instagram.com/yfu.finance/' target='_blank'>
+                <img src={require('../../assets/yfu/social-instagram.png')} />
+              </a>
+              <a href='https://discord.com/invite/RGt5Ukw' target='_blank'>
+                <img src={require('../../assets/yfu/social-discord.png')} />
+              </a>
             </div>
           </div>
           {/* <Navbar.Collapse className='justify-content-end'>
