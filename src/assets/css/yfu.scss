@@ -1,5 +1,6 @@
 $primary-color: #e95b30;
 $gray: #808080;
+$light-gray: #a9a9a9;
 
 .orange {
   color: $primary-color;
@@ -7,6 +8,10 @@ $gray: #808080;
 
 .gray {
   color: $gray;
+}
+
+.light-gray {
+  color: $light-gray;
 }
 
 .leftNav {
@@ -61,10 +66,21 @@ $gray: #808080;
   border-color: $primary-color;
 }
 
+.btn-outline-gray {
+  color: $light-gray;
+  border-color: $light-gray;
+}
+
 .btn-outline-primary:hover {
   color: #fff;
   background-color: $primary-color;
   border-color: $primary-color;
+}
+
+.btn-outline-gray:hover {
+  color: #fff;
+  background-color: $light-gray;
+  border-color: $light-gray;
 }
 
 .home-first-section-bg {
@@ -114,7 +130,28 @@ h1 {
 .left-auto {
   left: auto;
 }
+.right-auto {
+  right: auto;
+}
 
 .max-width-40 {
   max-width: 40%;
+}
+
+.max-width-25 {
+  max-width: 25%;
+}
+
+.max-width-50 {
+  max-width: 50%;
+}
+
+.header-social {
+  img {
+    height: 1.7em;
+  }
+}
+
+.main-content {
+  // padding-top: 10vh;
 }

@@ -106,28 +106,40 @@ class Header extends React.Component {
 
           <div>
             {address && (
-              <Link to='/#' onClick={this.unlockClicked}>
-                <img
-                  alt=''
-                  src={require('../../assets/wallet-logo.png')}
-                  height='30'
-                />
-                &nbsp;
-                <span className='text-purple'>{address}</span>
-              </Link>
+              <button
+                className='btn btn-outline-primary btn-outline-gray round-30 p-3'
+                onClick={this.unlockClicked}
+              >
+                <span className='mr-5'>
+                  <b>Wallet</b>
+                </span>
+                <span>{address}</span>
+              </button>
+              // <Link to='/#' onClick={this.unlockClicked}>
+              //   <span className='text-purple'>{address}</span>
+              // </Link>
             )}
             {!address && (
               <button
-                className='btn btn-outline-primary btn-outline-orange round-17'
+                className='btn btn-outline-primary btn-outline-orange round-30 p-3 pl-5 pr-5'
                 onClick={this.unlockClicked}
               >
-                Connect Wallet
+                <h4 className='mb-0'>CONNECT</h4>
               </button>
             )}
+            <div className='d-flex justify-content-between header-social mt-2'>
+              <img src={require('../../assets/yfu/social-twitter.png')} />
+              <img src={require('../../assets/yfu/social-telegram.png')} />
+              <img src={require('../../assets/yfu/social-medium.png')} />
+              <img src={require('../../assets/yfu/social-instagram.png')} />
+              <img src={require('../../assets/yfu/social-discord.png')} />
+            </div>
           </div>
+          {/* <Navbar.Collapse className='justify-content-end'>
+          </Navbar.Collapse> */}
         </nav>
 
-        {this.renderModal()}
+        {modalOpen && this.renderModal()}
       </>
     );
   }

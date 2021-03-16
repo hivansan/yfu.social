@@ -12,6 +12,7 @@ import Account from './components/account/account';
 import Home from './components/home/home';
 import Hives from './components/hives/hives';
 import Faq from './components/faq/faq';
+import Resources from './components/resources/resources';
 import Stake from './components/stake/stake';
 import Nft from './components/nft/nft';
 import Pools from './components/pools/pools';
@@ -120,38 +121,36 @@ class App extends Component {
             onSwitchTheme={this.onSwitchThemeHandler}
             activeStyle={this.state.style}
           />
-          {!account ? (
-            <Account />
-          ) : (
-            <>
-              <Switch>
-                <Route path='/stake/:address' component={Stake} />
-                <Route path='/hives' component={Hives} />
-                <Route path='/faq' component={Faq} />
-                <Route path='/exchange' component={Exchange} />
-                <Route exact path='/pools/:selectedPool'>
-                  <Pools
-                    assetsStoreKey='exchangeAssets'
-                    extraAssets={['ETH', 'WPE']}
-                    disableSwap={true}
-                  />
-                </Route>
-                <Route path='/pools'>
-                  <Pools
-                    assetsStoreKey='exchangeAssets'
-                    extraAssets={['ETH', 'WPE']}
-                    disableSwap={true}
-                  />
-                </Route>
-                <Route path='/nft'>
-                  <Nft />
-                </Route>
-                <Route path='/'>
-                  <Home />
-                </Route>
-              </Switch>
-            </>
-          )}
+
+          <>
+            <Switch>
+              <Route path='/stake/:address' component={Stake} />
+              <Route path='/hives' component={account ? Hives : Account} />
+              <Route path='/faq' component={Faq} />
+              <Route path='/resources' component={Resources} />
+              <Route path='/exchange' component={Exchange} />
+              <Route exact path='/pools/:selectedPool'>
+                <Pools
+                  assetsStoreKey='exchangeAssets'
+                  extraAssets={['ETH', 'WPE']}
+                  disableSwap={true}
+                />
+              </Route>
+              <Route path='/pools'>
+                <Pools
+                  assetsStoreKey='exchangeAssets'
+                  extraAssets={['ETH', 'WPE']}
+                  disableSwap={true}
+                />
+              </Route>
+              <Route path='/nft'>
+                <Nft />
+              </Route>
+              <Route path='/'>
+                <Home />
+              </Route>
+            </Switch>
+          </>
         </IpfsRouter>
       </div>
     );

@@ -23,7 +23,7 @@ const nftsData = [
 ];
 
 const nftLayout = (nft) => (
-  <div className='col-4'>
+  <div className='col-lg-3 col-md-4 col-sm-6'>
     <img
       alt=''
       src={require(`../../assets/yfu/${nft.image}`)}
@@ -39,10 +39,12 @@ const nftLayout = (nft) => (
 
 const Nft = (props) => {
   return (
-    <div className='p-5'>
-      <h4 className='orange'>ANIME LIMITED</h4>
-      <h1>NFTs</h1>
-      <div className='row'>{nftsData.map(nftLayout)}</div>
+    <div className='pt-5'>
+      <div className='p-5'>
+        <h4 className='orange'>ANIME LIMITED</h4>
+        <h1>NFTs</h1>
+        <div className='row'>{nftsData.map(nftLayout)}</div>
+      </div>
     </div>
   );
 };

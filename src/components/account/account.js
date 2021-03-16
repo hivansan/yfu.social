@@ -37,13 +37,21 @@ class Account extends Component {
 
   render() {
     return (
-      <div className='p-5 text-center'>
+      <div className='p-5 mt-5 text-center'>
         <h1>WELCOME TO ANIME LIMITED</h1>
         {/* <img
           src={require('../../assets/bees-logo.png')}
           className='bees-logo'
         ></img> */}
-        <h4>Click in "Connect" to start farming.</h4>
+        <h4 className='light-gray'>
+          Click in <span style={{ color: '#e95c30' }}>"Connect"</span> to start
+          farming.
+        </h4>
+        <img
+          src={require('../../assets/yfu/stopgirl.png')}
+          className='fixed-bottom left-auto max-width-50'
+          alt=''
+        />
       </div>
     );
   }

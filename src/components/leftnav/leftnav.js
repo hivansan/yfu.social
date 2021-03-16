@@ -59,7 +59,7 @@ const LeftNav = (props) => {
             </li>
           </NavLink>
 
-          <NavLink exact to='/routeX'>
+          <NavLink exact to='/resources'>
             <li className='item-menu'>
               <img
                 alt=''

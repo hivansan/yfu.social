@@ -336,7 +336,7 @@ const Pools = (props) => {
   // };
 
   return (
-    <div>
+    <div className='pt-5'>
       <div className='p-5 ml-5'>
         {boxesLayout}
         <div className='row'>

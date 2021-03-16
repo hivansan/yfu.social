@@ -7,7 +7,7 @@ import HivesList from './hives-list';
 
 const Hives = (props) => {
   return (
-    <div>
+    <div className='pt-5'>
       <div className='p-5'>
         <h4 className='orange'>ANIME LIMITED</h4>
         <h1>ACTIVE POOLS</h1>
