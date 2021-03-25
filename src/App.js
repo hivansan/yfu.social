@@ -15,6 +15,7 @@ import Faq from './components/faq/faq';
 import Resources from './components/resources/resources';
 import Stake from './components/stake/stake';
 import Nft from './components/nft/nft';
+import NftItem from './components/nft/nftItem';
 import Pools from './components/pools/pools';
 
 import {
@@ -143,6 +144,7 @@ class App extends Component {
                   disableSwap={true}
                 />
               </Route>
+              <Route path='/nft/:tokenAddress/:tokenId' component={NftItem} />
               <Route path='/nft'>
                 <Nft />
               </Route>
