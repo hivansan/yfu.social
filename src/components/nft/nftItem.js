@@ -10,14 +10,16 @@ import Store from '../../stores/store';
 
 import config from '../../config/example.config';
 import { CONNECTION_CONNECTED } from '../../constants/constants';
+import Loader from '../utils/Loader';
 
 const { emitter, dispatcher, store } = Store;
-const provider = new Web3.providers.HttpProvider(config.infuraProvider);
 
 const NftItem = (props) => {
   console.log(props);
   const [asset, setAsset] = useState({});
   const [account, setAccount] = useState('');
+
+  const provider = new Web3.providers.HttpProvider(config.infuraProvider);
 
   useEffect(() => {
     getAsset();
@@ -43,14 +45,28 @@ const NftItem = (props) => {
       tokenId: props.match.params.tokenId, // string | number | null
     });
 
-    // console.log(JSON.stringify(asset));
+    if (asset.orders && asset.orders.length) {
+      console.log(asset.orders[0].paymentTokenContract.usdPrice);
+      console.log(`${asset.orders[0].currentPrice}` / 1000000000000000000);
+      console.log(
+        (`${asset.orders[0].currentPrice}` / 1000000000000000000) *
+          asset.orders[0].paymentTokenContract.usdPrice
+      );
+    }
 
     setAsset(asset);
   };
 
   const onBuyItem = async () => {
+    if (window.ethereum) {
+      window.web3 = new Web3(window.ethereum);
+      window.ethereum.enable();
+
+      console.log(window.web3);
+      console.log(window.web3.currentProvider);
+    }
     try {
-      const seaport = new OpenSeaPort(provider, {
+      const seaport = new OpenSeaPort(window.web3.currentProvider, {
         networkName: Network.Main,
       });
 
@@ -63,7 +79,8 @@ const NftItem = (props) => {
         include_bundled: 'false',
         include_invalid: 'false',
       });
-      // console.log(JSON.stringify(order));
+
+      console.log(order);
 
       // console.log(account);
       const transactionHash = await seaport.fulfillOrder({
@@ -83,64 +100,97 @@ const NftItem = (props) => {
 
   return (
     <>
-      {asset?.owner && (
+      {
         <div className='pt-5'>
           <div className='p-5'>
-            <div className='row'>
-              <div className='col-md-4 col-sm-12'>
-                <div className='card'>
-                  <img src={asset.imagePreviewUrl} alt='' />
-                </div>
-                <div className='card mt-3'>
-                  <div className='card-body'>
-                    <h5 className='card-title'>Details</h5>
-                    <hr />
-                    <div>
-                      Chain Info
+            {asset?.owner ? (
+              <div className='row'>
+                <div className='col-md-4 col-sm-12'>
+                  <div className='card'>
+                    <img src={asset.imagePreviewUrl} alt='' />
+                  </div>
+                  <div className='card mt-3'>
+                    <div className='card-body'>
+                      <h5 className='card-title'>Details</h5>
                       <hr />
-                      <div>contract address {asset.tokenAddress}</div>
-                      <div>token ID {asset.tokenId}</div>
+                      {asset.description && asset.description}
+                      <div>
+                        Chain Info
+                        <hr />
+                        <div>contract address {asset.tokenAddress}</div>
+                        <div>token ID {asset.tokenId}</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className='col-md-8'>
+                  <div>
+                    <h4>{asset.name}</h4>
+                    <div>
+                      <img
+                        src={asset.owner.profile_img_url}
+                        className='owner-img mr-2'
+                        alt=''
+                      />
+                      OWNED BY
+                      {asset.owner.address}
+                    </div>
+                  </div>
+                  <div className='row'>
+                    <div className='col-md-3'></div>
+                  </div>
+                  <div className='card mt-3'>
+                    <div className='card-body'>
+                      <h5 className='card-title'>
+                        {asset?.orders?.length ? (
+                          <>
+                            <span>
+                              {`${asset.orders[0].currentPrice}` /
+                                1000000000000000000}{' '}
+                              eth
+                            </span>
+                            <span>
+                              {' '}
+                              (
+                              {(
+                                (`${asset.orders[0].currentPrice}` /
+                                  1000000000000000000) *
+                                asset.orders[0].paymentTokenContract.usdPrice
+                              ).toFixed(2)}{' '}
+                              usd)
+                            </span>
+                          </>
+                        ) : null}
+                      </h5>
+
+                      {asset?.orders?.length ? (
+                        <button
+                          className='btn btn-outline-primary btn-outline-orange'
+                          type='button'
+                          onClick={onBuyItem}
+                        >
+                          Buy Item
+                        </button>
+                      ) : (
+                        'item not purchaseable'
+                      )}
+
+                      <br />
+                      <button disabled className='btn btn-secondary mt-3'>
+                        Make offer
+                      </button>
                     </div>
                   </div>
                 </div>
               </div>
-              <div className='col-md-8'>
-                <div>
-                  <h4>{asset.name}</h4>
-                  {asset.description && <p>{asset.description}</p>}
-                  <div>
-                    <img
-                      src={asset.owner.profile_img_url}
-                      className='owner-img'
-                      alt=''
-                    />
-                    OWNED BY
-                    {asset.owner.address}
-                  </div>
-                </div>
-                <div className='row'>
-                  <div className='col-md-3'></div>
-                </div>
-                <div className='card mt-3'>
-                  <div className='card-body'>
-                    <h5 className='card-title'>Actions</h5>
-                    <button
-                      className='btn btn-outline-primary btn-outline-orange'
-                      onClick={onBuyItem}
-                    >
-                      Buy Item
-                    </button>
-                    <br />
-                    <button disabled className='btn btn-secondary mt-3'>
-                      Make offer
-                    </button>
-                  </div>
-                </div>
+            ) : (
+              <div className='text-center'>
+                <Loader />
               </div>
-            </div>
+            )}
           </div>
         </div>
-      )}
+      }
     </>
   );
 };
